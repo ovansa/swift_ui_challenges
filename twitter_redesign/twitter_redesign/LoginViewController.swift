@@ -106,6 +106,7 @@ class LoginViewController: UIViewController {
         textField.attributedPlaceholder = NSAttributedString(string: "**************", attributes: [
             NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 14)!, NSAttributedString.Key.foregroundColor: lightBlueColor
         ])
+        textField.enablesReturnKeyAutomatically = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -190,6 +191,9 @@ class LoginViewController: UIViewController {
         
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .white
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
         setupLayout()
     }
@@ -369,5 +373,12 @@ class LoginViewController: UIViewController {
     
     @objc func signUp() {
         print("Register")
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        return true
     }
 }

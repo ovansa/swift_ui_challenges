@@ -2,162 +2,163 @@
 //  HomeViewController.swift
 //  twitter_redesign
 //
-//  Created by Muhammed Ibrahim on 07/11/2020.
+//  Created by Muhammed Ibrahim on 08/11/2020.
 //  Copyright © 2020 Ovansa. All rights reserved.
 //
 
 import UIKit
 
-let lightBlueColor = UIColor(displayP3Red: 3/255, green: 169/255, blue: 244/255, alpha: 1)
-let darkBlueColor = UIColor(displayP3Red: 0/255, green: 125/255, blue: 181/255, alpha: 1)
+let lighterBlueColor = UIColor(displayP3Red: 174/255, green: 219/255, blue: 236/255, alpha: 1)
 
 class HomeViewController: UIViewController {
-    let topView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let welcomeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Welcome to Twitter"
-        label.font = UIFont(name: "Avenir-Heavy", size: 24)
-        label.textAlignment = .center
-        label.textColor = lightBlueColor
-        return label
-    }()
-    
-    let welcomeDescription: UILabel = {
-        let label = UILabel()
-        label.text = "See what's happening in the world right now!"
-        label.font = UIFont(name: "Avenir", size: 14)
-        label.textAlignment = .center
-        label.textColor = .black
-        return label
-    }()
-    
-    let centerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let welcomeImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "welcome")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    let bottomView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 15)
-        button.backgroundColor = lightBlueColor
-        button.layer.cornerRadius = 20
-        button.addTarget(self, action: #selector(login), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let signUpButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 16)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 20
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
+        view.backgroundColor = .white
         setupLayout()
-        
-        navigationController?.navigationBar.isHidden = true
     }
     
-    @objc func login() {
-        navigationController?.pushViewController(LoginViewController(), animated: true)
+    //MARK: - Navigation Bar Setup Methods
+    
+    func setupNavigationBar() {
+        setupLeftNavItem()
+        setupRightNavItem()
+        setupTitleNavItem()
+        
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
-    private func setupLayout() {
-        view.addSubview(topView)
-        view.addSubview(centerView)
-        view.addSubview(bottomView)
+    func setupLeftNavItem() {
+        let menuButton = UIButton(type: .custom)
+        menuButton.setImage(#imageLiteral(resourceName: "menu").withRenderingMode(.alwaysOriginal), for: .normal)
+        menuButton.imageView?.contentMode = .scaleAspectFit
+        menuButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        menuButton.addTarget(self, action: #selector(menuPressed), for: .touchUpInside)
         
-        let topStackView = UIStackView(arrangedSubviews: [welcomeLabel, welcomeDescription])
-        topStackView.distribution = .equalSpacing
-        topStackView.axis = .vertical
-        topStackView.translatesAutoresizingMaskIntoConstraints = false
-        topView.addSubview(topStackView)
+        let menuBarItem = UIBarButtonItem(customView: menuButton)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 20)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 20)
+        currHeight?.isActive = true
         
-        centerView.addSubview(welcomeImageView)
+        navigationItem.leftBarButtonItem = menuBarItem
+    }
+    
+    func setupRightNavItem() {
+        let messageButton = UIButton(type: .custom)
+        messageButton.setImage(#imageLiteral(resourceName: "message").withRenderingMode(.alwaysOriginal), for: .normal)
+        messageButton.imageView?.contentMode = .scaleAspectFit
+        messageButton.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        messageButton.addTarget(self, action: #selector(messagePressed), for: .touchUpInside)
         
-        let stackView = UIStackView(arrangedSubviews: [loginButton, signUpButton])
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        bottomView.addSubview(stackView)
+        let menuBarItem = UIBarButtonItem(customView: messageButton)
+        let currWidth = menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 20)
+        currWidth?.isActive = true
+        let currHeight = menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 20)
+        currHeight?.isActive = true
+        
+        navigationItem.rightBarButtonItem = menuBarItem
+    }
+    
+    func setupTitleNavItem() {
+        let titleImageView = UIImageView(image: #imageLiteral(resourceName: "twitter").withRenderingMode(.alwaysOriginal))
+        titleImageView.contentMode = .scaleAspectFit
+        NSLayoutConstraint.activate([
+            titleImageView.heightAnchor.constraint(equalToConstant: 30.0),
+            titleImageView.widthAnchor.constraint(equalToConstant: 30.0)
+        ])
+        navigationItem.titleView = titleImageView
+    }
+    
+    @objc func menuPressed() {
+        print("Menu pressed")
+    }
+    
+    @objc func messagePressed() {
+        print("Message pressed")
+    }
+    
+    //MARK: - Body Layout Setup
+    
+    let searchContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = lighterBlueColor.withAlphaComponent(0.2)
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = lighterBlueColor.withAlphaComponent(0.5).cgColor
+        view.layer.cornerRadius = 30.0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let searchLogo: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Screenshot 2019-09-27 at 4.43.47 PM"))
+        imageView.layer.cornerRadius = imageView.frame.width / 4
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let selectImageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "Group 2 (1)").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(selectImage), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let searchTextField: UITextField = {
+        let textField = UITextField()
+        textField.font = UIFont(name: "Avenir", size: 14)
+        textField.attributedPlaceholder = NSAttributedString(string: "What's happening?", attributes: [
+            NSAttributedString.Key.font: UIFont(name: "Avenir", size: 14)!, NSAttributedString.Key.foregroundColor: lightBlueColor
+        ])
+        textField.enablesReturnKeyAutomatically = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    @objc func selectImage() {
+        print("Select image")
+    }
+    
+    func setupLayout() {
+        view.addSubview(searchContainerView)
+        
+        searchContainerView.addSubview(searchLogo)
+        searchContainerView.addSubview(selectImageButton)
+        searchContainerView.addSubview(searchTextField)
         
         NSLayoutConstraint.activate([
-            topView.topAnchor.constraint(equalTo: view.topAnchor),
-            topView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33)
+            searchContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 15.0),
+            searchContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10.0),
+            searchContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10.0),
+            searchContainerView.heightAnchor.constraint(equalToConstant: 55.0)
         ])
         
         NSLayoutConstraint.activate([
-            centerView.topAnchor.constraint(equalTo: topView.bottomAnchor),
-            centerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            centerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            centerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33)
+            searchLogo.heightAnchor.constraint(equalTo: searchContainerView.heightAnchor, multiplier: 0.7),
+            searchLogo.widthAnchor.constraint(equalTo: searchContainerView.heightAnchor, multiplier: 0.7),
+            searchLogo.leadingAnchor.constraint(equalTo: searchContainerView.leadingAnchor, constant: 10.0),
+            searchLogo.centerYAnchor.constraint(equalTo: searchContainerView.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            bottomView.topAnchor.constraint(equalTo: centerView.bottomAnchor),
-            bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            selectImageButton.heightAnchor.constraint(equalTo: searchContainerView.heightAnchor, multiplier: 0.4),
+            selectImageButton.widthAnchor.constraint(equalTo: searchContainerView.heightAnchor, multiplier: 0.4),
+            selectImageButton.trailingAnchor.constraint(equalTo: searchContainerView.trailingAnchor, constant: -15.0),
+            selectImageButton.centerYAnchor.constraint(equalTo: searchContainerView.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            topStackView.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
-            topStackView.centerYAnchor.constraint(equalTo: topView.centerYAnchor),
-            topStackView.heightAnchor.constraint(equalTo: topView.heightAnchor, multiplier: 0.2),
-            topStackView.widthAnchor.constraint(equalTo: topView.widthAnchor, multiplier: 0.8)
-        ])
-        
-        NSLayoutConstraint.activate([
-            welcomeImageView.heightAnchor.constraint(equalTo: centerView.heightAnchor, multiplier: 0.8),
-            welcomeImageView.widthAnchor.constraint(equalTo: centerView.widthAnchor, multiplier: 0.8),
-            welcomeImageView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor),
-            welcomeImageView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: bottomView.centerYAnchor),
-            stackView.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor),
-            stackView.heightAnchor.constraint(equalTo: bottomView.heightAnchor, multiplier: 0.3),
-            stackView.widthAnchor.constraint(equalTo: bottomView.widthAnchor, multiplier: 0.8)
-        ])
-        
-        NSLayoutConstraint.activate([
-            loginButton.heightAnchor.constraint(equalToConstant: 45.0)
+            searchTextField.topAnchor.constraint(equalTo: searchContainerView.topAnchor),
+            searchTextField.bottomAnchor.constraint(equalTo: searchContainerView.bottomAnchor),
+            searchTextField.leadingAnchor.constraint(equalTo: searchLogo.trailingAnchor, constant: 30.0),
+            searchTextField.trailingAnchor.constraint(equalTo: selectImageButton.leadingAnchor, constant: -30.0)
         ])
     }
 }
