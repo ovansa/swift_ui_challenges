@@ -16,6 +16,9 @@
 		0B7BE8BC255707AB001D423C /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BE8BB255707AB001D423C /* OnboardViewController.swift */; };
 		0B7BE8BE25572E05001D423C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BE8BD25572E05001D423C /* LoginViewController.swift */; };
 		0B7BE8C225587B1A001D423C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BE8C125587B1A001D423C /* HomeViewController.swift */; };
+		0BBB361125591AC400C233B2 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBB361025591AC400C233B2 /* NotificationsViewController.swift */; };
+		0BC7E49F2559218B005E0C5C /* NotificationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7E49E2559218B005E0C5C /* NotificationViewCell.swift */; };
+		0BC7E4A12559411E005E0C5C /* NotifViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7E4A02559411E005E0C5C /* NotifViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		0B7BE8BB255707AB001D423C /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		0B7BE8BD25572E05001D423C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0B7BE8C125587B1A001D423C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0BBB361025591AC400C233B2 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		0BC7E49E2559218B005E0C5C /* NotificationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewCell.swift; sourceTree = "<group>"; };
+		0BC7E4A02559411E005E0C5C /* NotifViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				0B7BE8BB255707AB001D423C /* OnboardViewController.swift */,
 				0B7BE8BD25572E05001D423C /* LoginViewController.swift */,
 				0B7BE8C125587B1A001D423C /* HomeViewController.swift */,
+				0BBB361025591AC400C233B2 /* NotificationsViewController.swift */,
+				0BC7E49E2559218B005E0C5C /* NotificationViewCell.swift */,
+				0BC7E4A02559411E005E0C5C /* NotifViewCell.swift */,
 			);
 			path = twitter_redesign;
 			sourceTree = "<group>";
@@ -152,7 +161,10 @@
 				0B7BE8AA255704C3001D423C /* SceneDelegate.swift in Sources */,
 				0B7BE8BE25572E05001D423C /* LoginViewController.swift in Sources */,
 				0B7BE8C225587B1A001D423C /* HomeViewController.swift in Sources */,
+				0BBB361125591AC400C233B2 /* NotificationsViewController.swift in Sources */,
+				0BC7E4A12559411E005E0C5C /* NotifViewCell.swift in Sources */,
 				0B7BE8BC255707AB001D423C /* OnboardViewController.swift in Sources */,
+				0BC7E49F2559218B005E0C5C /* NotificationViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

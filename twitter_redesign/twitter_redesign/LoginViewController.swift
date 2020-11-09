@@ -369,6 +369,7 @@ class LoginViewController: UIViewController {
     
     @objc func login() {
         print("Login")
+        navigationController?.pushViewController(NotificationsViewController(), animated: false)
     }
     
     @objc func signUp() {
