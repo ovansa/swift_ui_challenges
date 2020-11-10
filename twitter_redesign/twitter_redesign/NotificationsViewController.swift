@@ -57,7 +57,7 @@ class NotificationsViewController: UIViewController {
     }
     
     @objc func navbarButtonPressed() {
-        
+        print("Navbar Pressed")
     }
     
     func setupTitleNavItem() {
@@ -69,12 +69,12 @@ class NotificationsViewController: UIViewController {
         ])
         navigationItem.titleView = titleImageView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-
+        
         notificationTableView.register(NotificationViewCell.self, forCellReuseIdentifier: tableCellId)
         notificationTableView.delegate = self
         notificationTableView.dataSource = self
@@ -87,7 +87,9 @@ class NotificationsViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         return tableView
     }()
     

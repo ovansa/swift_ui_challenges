@@ -22,9 +22,9 @@ class NotificationViewCell: UITableViewCell {
     let titleText: UITextView = {
         let textView = UITextView()
         
-        let text = NSMutableAttributedString(string: "Mumbai Police", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 15)!])
-        text.append(NSAttributedString(string: " replied to ", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir", size: 15)!]))
-        text.append(NSAttributedString(string: "Zeus Posseidon", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 15)!]))
+        let text = NSMutableAttributedString(string: "Mumbai Police", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 14)!])
+        text.append(NSAttributedString(string: " replied to ", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir", size: 13)!]))
+        text.append(NSAttributedString(string: "Zeus Posseidon", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 14)!]))
         textView.attributedText = text
         textView.isEditable = false
         textView.isScrollEnabled = false
@@ -45,7 +45,7 @@ class NotificationViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Please share your exact location for necessary actions. Please share your exact location for necessary actions. Please share your exact location for necessary actions. Please share your exact location for necessary actions."
-        label.font = UIFont(name: "Avenir", size: 14)
+        label.font = UIFont(name: "Avenir", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -61,7 +61,8 @@ class NotificationViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        cellContainerView.frame = cellContainerView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: -20, right: 0)) ?? CGRect.zero
+
+        selectionStyle = UITableViewCell.SelectionStyle.none
     }
     
     func setupCellViews() {
@@ -75,7 +76,7 @@ class NotificationViewCell: UITableViewCell {
             cellContainerView.topAnchor.constraint(equalTo: topAnchor),
             cellContainerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             cellContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            cellContainerView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            cellContainerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.0)
         ])
         
         NSLayoutConstraint.activate([
@@ -86,10 +87,10 @@ class NotificationViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            optionButton.topAnchor.constraint(equalTo: cellContainerView.topAnchor, constant: 10.0),
-            optionButton.trailingAnchor.constraint(equalTo: cellContainerView.trailingAnchor, constant: -10.0),
+            optionButton.topAnchor.constraint(equalTo: cellContainerView.topAnchor, constant: 15.0),
+            optionButton.trailingAnchor.constraint(equalTo: cellContainerView.trailingAnchor, constant: -15),
             optionButton.heightAnchor.constraint(equalToConstant: 20.0),
-            optionButton.widthAnchor.constraint(equalToConstant: 20.0)
+            optionButton.widthAnchor.constraint(equalToConstant: 15.0)
         ])
         
         NSLayoutConstraint.activate([
