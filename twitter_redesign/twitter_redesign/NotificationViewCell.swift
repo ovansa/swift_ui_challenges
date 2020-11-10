@@ -10,6 +10,19 @@ import UIKit
 
 class NotificationViewCell: UITableViewCell {
     
+    var notificationItem: NotificationItem? {
+        didSet {
+            guard let item = notificationItem else { return }
+            
+            let text = NSMutableAttributedString(string: "\(item.mainText)", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 14)!])
+            text.append(NSAttributedString(string: "\(item.centerText)", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir", size: 13)!]))
+            text.append(NSAttributedString(string: "\(item.subText)", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Medium", size: 14)!]))
+            titleText.attributedText = text
+            
+            notificationDescriptionLabel.text = item.descriptionText
+        }
+    }
+    
     let cellContainerView: UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
@@ -52,6 +65,15 @@ class NotificationViewCell: UITableViewCell {
     
     @objc func optionButtonPressed() {
         
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCellViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func awakeFromNib() {

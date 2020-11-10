@@ -8,7 +8,25 @@
 
 import UIKit
 
+struct NotificationItem {
+    let mainText: String
+    let centerText: String
+    let subText: String
+    let descriptionText: String
+    
+}
+
 class NotificationsViewController: UIViewController {
+    let messages = [
+        NotificationItem(mainText: "Ovansa ", centerText: "replied to ", subText: "Halibee", descriptionText: "Please share you exact location for necessary action."),
+        NotificationItem(mainText: "Ovansa ", centerText: "shared a post ", subText: "", descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie finibus sapien, sit amet hendrerit eros facilisis non. Integer sit amet eros ut diam lacinia vulputate nec ultricies lacus."),
+        NotificationItem(mainText: "", centerText: "Retweets from ", subText: "Halibee", descriptionText: "Etiam eu enim in metus lobortis scelerisque. Curabitur gravida, nibh sit amet aliquam lobortis, dolor risus fringilla nisi, ac tincidunt ante nulla in dolor. Donec elementum neque et arcu scelerisque, eu tincidunt leo placerat. Suspendisse in purus odio. Mauris sit amet sem lectus. Duis scelerisque velit quis sagittis suscipit."),
+        NotificationItem(mainText: "Halimah ", centerText: "started a broadcast ", subText: "", descriptionText: "Link address https://www.youtube.com/watch?v=qoLPeoYlh_I"),
+        NotificationItem(mainText: "Ovansa ", centerText: "replied to ", subText: "Halibee", descriptionText: "Please share you exact location for necessary action."),
+        NotificationItem(mainText: "Ovansa ", centerText: "shared a post ", subText: "", descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie finibus sapien, sit amet hendrerit eros facilisis non. Integer sit amet eros ut diam lacinia vulputate nec ultricies lacus."),
+        NotificationItem(mainText: "", centerText: "Retweets from ", subText: "Halibee", descriptionText: "Etiam eu enim in metus lobortis scelerisque. Curabitur gravida, nibh sit amet aliquam lobortis, dolor risus fringilla nisi, ac tincidunt ante nulla in dolor. Donec elementum neque et arcu scelerisque, eu tincidunt leo placerat. Suspendisse in purus odio. Mauris sit amet sem lectus. Duis scelerisque velit quis sagittis suscipit."),
+        NotificationItem(mainText: "Halimah ", centerText: "started a broadcast ", subText: "", descriptionText: "Link address https://www.youtube.com/watch?v=qoLPeoYlh_I"),
+    ]
     
     let tableCellId = "tableCellId"
     
@@ -108,12 +126,12 @@ class NotificationsViewController: UIViewController {
 
 extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = notificationTableView.dequeueReusableCell(withIdentifier: tableCellId, for: indexPath) as! NotificationViewCell
-        cell.setupCellViews()
+        cell.notificationItem = messages[indexPath.item]
         return cell
     }
 }
