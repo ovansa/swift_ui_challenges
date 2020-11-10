@@ -183,7 +183,7 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout, UICollecti
         if section == 1 {
             return CGSize(width: view.frame.width, height: 50)
         }
-        return CGSize(width: view.frame.width, height: 50)
+        return CGSize(width: view.frame.width, height: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {

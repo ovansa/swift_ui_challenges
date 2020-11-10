@@ -33,7 +33,8 @@ class SettingsFooterCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            headerLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.0),
+            headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5.0)
         ])
     }
 }

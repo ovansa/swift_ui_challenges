@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        window?.rootViewController = UINavigationController(rootViewController: SettingsViewController())
+        window?.rootViewController = CustomTabController()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

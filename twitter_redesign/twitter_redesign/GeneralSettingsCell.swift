@@ -49,10 +49,18 @@ class GeneralSettingsCell: UICollectionViewCell {
         return button
     }()
     
+    let separatorLineView: UIView = {
+        let lineView = UIView()
+        lineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        return lineView
+    }()
+    
     func setupViews() {
         addSubview(titleIcon)
         addSubview(titleLabel)
         addSubview(arrowButton)
+        addSubview(separatorLineView)
         
         NSLayoutConstraint.activate([
             titleIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
@@ -71,6 +79,13 @@ class GeneralSettingsCell: UICollectionViewCell {
             arrowButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0),
             arrowButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
             arrowButton.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2)
+        ])
+        
+        NSLayoutConstraint.activate([
+            separatorLineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            separatorLineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            separatorLineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            separatorLineView.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
 }

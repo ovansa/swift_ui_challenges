@@ -26,7 +26,7 @@ class AccountSettingsCell: UICollectionViewCell {
     }
     
     let titleIcon: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.fill")
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = settingsIconBlueColor
@@ -42,6 +42,13 @@ class AccountSettingsCell: UICollectionViewCell {
         return label
     }()
     
+    let separatorLineView: UIView = {
+        let lineView = UIView()
+        lineView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        return lineView
+    }()
+    
     let arrowButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
@@ -55,6 +62,7 @@ class AccountSettingsCell: UICollectionViewCell {
         addSubview(titleIcon)
         addSubview(titleLabel)
         addSubview(arrowButton)
+        addSubview(separatorLineView)
         
         NSLayoutConstraint.activate([
             titleIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
@@ -73,6 +81,13 @@ class AccountSettingsCell: UICollectionViewCell {
             arrowButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0),
             arrowButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
             arrowButton.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2)
+        ])
+        
+        NSLayoutConstraint.activate([
+            separatorLineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            separatorLineView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            separatorLineView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            separatorLineView.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
 }

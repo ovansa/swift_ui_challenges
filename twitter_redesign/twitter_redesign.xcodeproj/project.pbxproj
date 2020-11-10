@@ -24,6 +24,7 @@
 		0BC7E4AD255ACA9F005E0C5C /* GeneralSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC7E4AC255ACA9F005E0C5C /* GeneralSettingsCell.swift */; };
 		0BC9F4ED255AD4F700AC4383 /* GeneralSettingsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9F4EC255AD4F700AC4383 /* GeneralSettingsHeaderCell.swift */; };
 		0BC9F4EF255ADB0D00AC4383 /* SettingsFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9F4EE255ADB0D00AC4383 /* SettingsFooterCell.swift */; };
+		0BC9F4F1255B1A9900AC4383 /* CustomTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9F4F0255B1A9900AC4383 /* CustomTabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		0BC7E4AC255ACA9F005E0C5C /* GeneralSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsCell.swift; sourceTree = "<group>"; };
 		0BC9F4EC255AD4F700AC4383 /* GeneralSettingsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsHeaderCell.swift; sourceTree = "<group>"; };
 		0BC9F4EE255ADB0D00AC4383 /* SettingsFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFooterCell.swift; sourceTree = "<group>"; };
+		0BC9F4F0255B1A9900AC4383 /* CustomTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				0B7BE8B5255704C6001D423C /* Info.plist */,
 				0B7BE8BB255707AB001D423C /* OnboardViewController.swift */,
 				0B7BE8BD25572E05001D423C /* LoginViewController.swift */,
+				0BC9F4F0255B1A9900AC4383 /* CustomTabController.swift */,
 				0BC7E4AA255A77C2005E0C5C /* SettingsHeaderCell.swift */,
 				0BC9F4EE255ADB0D00AC4383 /* SettingsFooterCell.swift */,
 				0BC9F4EC255AD4F700AC4383 /* GeneralSettingsHeaderCell.swift */,
@@ -173,6 +176,7 @@
 			files = (
 				0BC7E4AB255A77C2005E0C5C /* SettingsHeaderCell.swift in Sources */,
 				0B7BE8AC255704C3001D423C /* ViewController.swift in Sources */,
+				0BC9F4F1255B1A9900AC4383 /* CustomTabController.swift in Sources */,
 				0B7BE8A8255704C3001D423C /* AppDelegate.swift in Sources */,
 				0BC9F4EF255ADB0D00AC4383 /* SettingsFooterCell.swift in Sources */,
 				0B7BE8AA255704C3001D423C /* SceneDelegate.swift in Sources */,

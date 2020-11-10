@@ -31,10 +31,11 @@ class SettingsHeaderCell: UICollectionViewCell {
     }()
     
     func setupLayout() {
+        clipsToBounds = true
         addSubview(headerLabel)
         
         NSLayoutConstraint.activate([
-            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
         ])
     }

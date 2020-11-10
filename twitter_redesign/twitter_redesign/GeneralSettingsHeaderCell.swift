@@ -32,7 +32,7 @@ class GeneralSettingsHeaderCell: UICollectionViewCell {
         addSubview(headerLabel)
         
         NSLayoutConstraint.activate([
-            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10.0),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
         ])
     }
