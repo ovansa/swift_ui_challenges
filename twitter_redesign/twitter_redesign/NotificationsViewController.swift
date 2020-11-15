@@ -26,6 +26,9 @@ class NotificationsViewController: UIViewController {
         NotificationItem(mainText: "Ovansa ", centerText: "shared a post ", subText: "", descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie finibus sapien, sit amet hendrerit eros facilisis non. Integer sit amet eros ut diam lacinia vulputate nec ultricies lacus."),
         NotificationItem(mainText: "", centerText: "Retweets from ", subText: "Halibee", descriptionText: "Etiam eu enim in metus lobortis scelerisque. Curabitur gravida, nibh sit amet aliquam lobortis, dolor risus fringilla nisi, ac tincidunt ante nulla in dolor. Donec elementum neque et arcu scelerisque, eu tincidunt leo placerat. Suspendisse in purus odio. Mauris sit amet sem lectus. Duis scelerisque velit quis sagittis suscipit."),
         NotificationItem(mainText: "Halimah ", centerText: "started a broadcast ", subText: "", descriptionText: "Link address https://www.youtube.com/watch?v=qoLPeoYlh_I"),
+        NotificationItem(mainText: "Ovansa ", centerText: "replied to ", subText: "Halibee", descriptionText: "Please share you exact location for necessary action."),
+        NotificationItem(mainText: "Ovansa ", centerText: "shared a post ", subText: "", descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie finibus sapien, sit amet hendrerit eros facilisis non. Integer sit amet eros ut diam lacinia vulputate nec ultricies lacus."),
+        NotificationItem(mainText: "", centerText: "Retweets from ", subText: "Halibee", descriptionText: "Etiam eu enim in metus lobortis scelerisque. Curabitur gravida, nibh sit amet aliquam lobortis, dolor risus fringilla nisi, ac tincidunt ante nulla in dolor. Donec elementum neque et arcu scelerisque, eu tincidunt leo placerat. Suspendisse in purus odio. Mauris sit amet sem lectus. Duis scelerisque velit quis sagittis suscipit."),
     ]
     
     let tableCellId = "tableCellId"

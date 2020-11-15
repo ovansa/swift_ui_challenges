@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B78D56A25602A0C00CE5BCB /* FeedsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B78D56925602A0C00CE5BCB /* FeedsController.swift */; };
+		0B78D56C2560326900CE5BCB /* FeedsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B78D56B2560326900CE5BCB /* FeedsViewCell.swift */; };
+		0B78D56E2560333400CE5BCB /* FeedsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B78D56D2560333400CE5BCB /* FeedsHeaderCell.swift */; };
 		0B7BE8A8255704C3001D423C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BE8A7255704C3001D423C /* AppDelegate.swift */; };
 		0B7BE8AA255704C3001D423C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BE8A9255704C3001D423C /* SceneDelegate.swift */; };
 		0B7BE8AC255704C3001D423C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7BE8AB255704C3001D423C /* ViewController.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B78D56925602A0C00CE5BCB /* FeedsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsController.swift; sourceTree = "<group>"; };
+		0B78D56B2560326900CE5BCB /* FeedsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsViewCell.swift; sourceTree = "<group>"; };
+		0B78D56D2560333400CE5BCB /* FeedsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsHeaderCell.swift; sourceTree = "<group>"; };
 		0B7BE8A4255704C3001D423C /* twitter_redesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitter_redesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B7BE8A7255704C3001D423C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B7BE8A9255704C3001D423C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,12 +96,15 @@
 				0B7BE8BB255707AB001D423C /* OnboardViewController.swift */,
 				0B7BE8BD25572E05001D423C /* LoginViewController.swift */,
 				0BC9F4F0255B1A9900AC4383 /* CustomTabController.swift */,
+				0B78D56925602A0C00CE5BCB /* FeedsController.swift */,
+				0B78D56D2560333400CE5BCB /* FeedsHeaderCell.swift */,
 				0BC7E4AA255A77C2005E0C5C /* SettingsHeaderCell.swift */,
 				0BC9F4EE255ADB0D00AC4383 /* SettingsFooterCell.swift */,
 				0BC9F4EC255AD4F700AC4383 /* GeneralSettingsHeaderCell.swift */,
 				0B7BE8C125587B1A001D423C /* HomeViewController.swift */,
 				0BBB361025591AC400C233B2 /* NotificationsViewController.swift */,
 				0BC7E4A22559EFCB005E0C5C /* SettingsViewController.swift */,
+				0B78D56B2560326900CE5BCB /* FeedsViewCell.swift */,
 				0BC7E4A4255A69C7005E0C5C /* AccountSettingsCell.swift */,
 				0BC7E4AC255ACA9F005E0C5C /* GeneralSettingsCell.swift */,
 				0BC7E49E2559218B005E0C5C /* NotificationViewCell.swift */,
@@ -178,6 +187,7 @@
 				0B7BE8AC255704C3001D423C /* ViewController.swift in Sources */,
 				0BC9F4F1255B1A9900AC4383 /* CustomTabController.swift in Sources */,
 				0B7BE8A8255704C3001D423C /* AppDelegate.swift in Sources */,
+				0B78D56E2560333400CE5BCB /* FeedsHeaderCell.swift in Sources */,
 				0BC9F4EF255ADB0D00AC4383 /* SettingsFooterCell.swift in Sources */,
 				0B7BE8AA255704C3001D423C /* SceneDelegate.swift in Sources */,
 				0BC9F4ED255AD4F700AC4383 /* GeneralSettingsHeaderCell.swift in Sources */,
@@ -185,7 +195,9 @@
 				0BC7E4A5255A69C7005E0C5C /* AccountSettingsCell.swift in Sources */,
 				0B7BE8C225587B1A001D423C /* HomeViewController.swift in Sources */,
 				0BC7E4AD255ACA9F005E0C5C /* GeneralSettingsCell.swift in Sources */,
+				0B78D56A25602A0C00CE5BCB /* FeedsController.swift in Sources */,
 				0BBB361125591AC400C233B2 /* NotificationsViewController.swift in Sources */,
+				0B78D56C2560326900CE5BCB /* FeedsViewCell.swift in Sources */,
 				0B7BE8BC255707AB001D423C /* OnboardViewController.swift in Sources */,
 				0BC7E49F2559218B005E0C5C /* NotificationViewCell.swift in Sources */,
 				0BC7E4A32559EFCB005E0C5C /* SettingsViewController.swift in Sources */,

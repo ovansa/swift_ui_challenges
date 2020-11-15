@@ -9,6 +9,7 @@
 import UIKit
 
 class CustomTabController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +23,7 @@ class CustomTabController: UITabBarController {
 //        homeNavController.tabBarItem.title = "Home"
         homeNavController.tabBarItem.image = UIImage(systemName: "house.fill")
         
-        let newsNavController = UINavigationController(rootViewController: SettingsViewController())
+        let newsNavController = UINavigationController(rootViewController: FeedsController())
 //        newsNavController.tabBarItem.title = "News"
         newsNavController.tabBarItem.image = UIImage(systemName: "folder.fill")
         
